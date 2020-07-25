@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue. js</title>
+</head>
+<body>
+  <div id="app">
+    <p v-pre>{{ message }}</p>
+    <!-- これらのはtextContentプロパティを設定する -->
+    <p>{{ message }}</p>
+    <p v-text="message"></p>
+  </div>
+
+  <!-- htmlの埋め込み -->
+  <div class="html">
+    <p v-pre>{{ html }}</p>
+    <!-- これはinnerHTMLを設定する -->
+    <p v-html="html"></p>
+  </div>
+
+  <!-- 属性値に埋め込む -->
+  <div id="bind">
+    <a v-bind:href="url">サポートサイト</a>
+  </div>
+
+  <!-- プロパティ値をアプリ独自のルールで加工する -->
+  <div id="el">
+    <p>{{ localEmail }}</p>
+  </div>
+  <div id="el2">
+    <p>{{ localEmail() }}</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="01hello.js"></script>
+</body>
+</html>

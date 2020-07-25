@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #main {
+      width: 50vw;
+      height: 50vh;
+      background: #aaaaaa;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="onclick('こんにちは', $event)">クリック</button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div id="app2">
+    <button v-on:click.once="onclick">現在時刻</button>
+    <p>{{ message }}</p>
+  </div>
+
+  <div id="app3">
+    <form>
+      <label for="name">氏名：</label>
+      <input type="text" id="name" v-on:keyup.27="clear" v-model="name" />
+    </form>
+  </div>
+
+  <div id="app4">
+    <form>
+      <label for="message">メッセージ：</label><br/>
+      <textarea id="message" v-on:keyup.alt.72="help" v-model="message"></textarea>
+    </form>
+  </div>
+
+  <div id="app5">
+    <div id="main" v-on:click.right="onclick">
+      please right click here.
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="03event.js"></script>
+</body>
+</html>

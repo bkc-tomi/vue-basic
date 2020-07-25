@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <form>
+      <label for="name">名前:</label>
+      <input type="text" id="name" v-model="myName" />
+    </form>
+    <div>こんにちは、{{ myName }}さん！</div>
+  </div>
+
+  <div id="app2">
+    <form>
+      <label for="man">男性</label>
+      <input type="radio" id="man" value="男性" v-model="gender" />
+      <br />
+      <!-- vueによってcheckedプロパティは無視される -->
+      <label for="woman">女性</label>
+      <input type="radio" id="woman" value="女性" v-model="gender" checked />
+      <br />
+      <label for="other">その他</label>
+      <input type="radio" id="other" value="その他" v-model="gender" />
+      <br />
+    </form>
+    <p>性別：{{ gender }}</p>
+  </div>
+
+  <div id="app3">
+    <form>
+      <label for="agree">同意する:</label>
+      <input type="checkbox" id="agree" v-model="agree" 
+        true-value="OK" false-value="no thanks"
+      />
+    </form>
+    <div>回答: {{ agree }}</div>
+  </div>
+
+  <div id="app4">
+    <form>
+      <label for="japanese">日本語</label>
+      <input type="checkbox" id="japanese" value="日本語" v-model="language" />
+      <label for="english">英語</label>
+      <input type="checkbox" id="english" value="英語" v-model="language" />
+      <label for="german">ドイツ語</label>
+      <input type="checkbox" id="german" value="ドイツ語" v-model="language" />
+    </form>
+    <div>回答: {{ language }}</div>
+  </div>
+
+  <div id="app5">
+    <form>
+      <select v-model="language">
+        <option value="">話せる言語は？</option>
+        <option>日本語</option>
+        <option>英語</option>
+        <option>ドイツ語</option>
+      </select>
+    </form>
+    <p>回答：{{ language }}</p>
+  </div>
+  
+  <div id="app6">
+    <form>
+      <select v-model="language" multiple>
+        <option value="">話せる言語は？</option>
+        <option>日本語</option>
+        <option>英語</option>
+        <option>ドイツ語</option>
+      </select>
+    </form>
+    <p>回答：{{ language }}</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="04model.js"></script>
+</body>
+</html>

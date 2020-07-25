@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <form>
+      <input type="button" value="クリック" v-on:click="onclick" />
+    </form>
+    <p>算出プロパティ: {{ randomc }}</p>
+    <p>メソッド: {{ randomm() }}</p>
+    <p>現在日時: {{ current }}</p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="02method.js"></script>
+</body>
+</html>
